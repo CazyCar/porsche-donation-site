@@ -154,5 +154,123 @@
   </div>
 </div>
 
+
+<div class="container mt-5 mb-4 text-center">
+  <div class="card-glow p-3">
+    <h4 class="mb-3">📢 Share the Dream</h4>
+    <p>Help me spread the word — every share brings the Porsche closer!</p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://coff.ee/crazycar" target="_blank" class="btn btn-primary">
+        Facebook
+      </a>
+      <a href="https://twitter.com/intent/tweet?url=https://coff.ee/crazycar&text=Support%20Ahmed's%20Porsche%20Dream!" target="_blank" class="btn btn-info">
+        X (Twitter)
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="btn btn-danger">
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank" class="btn btn-dark">
+        TikTok
+      </a>
+    </div>
+    <p class="mt-2 text-muted"><em>(Instagram and TikTok don’t support direct share — opens platform)</em></p>
+  </div>
+</div>
+
+
+<div class="container mt-5">
+  <div class="card-glow p-4">
+    <h3 class="mb-3 text-center">🎬 Shorts Showroom</h3>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="ratio ratio-9x16">
+          <iframe src="https://www.youtube.com/embed/-65Bvz2W3Oc" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ratio ratio-9x16">
+          <iframe src="https://www.youtube.com/embed/qEq_p0VM2vk" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ratio ratio-9x16">
+          <iframe src="https://www.youtube.com/embed/-eIu76oHXAQ" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-5">
+  <div class="card-glow p-4">
+    <h3 class="mb-3 text-center">💬 Donor Wall</h3>
+    <p class="text-center mb-4">Leave a message, wish, or encouragement here!</p>
+    <form id="commentForm" class="mb-3">
+      <div class="row g-2">
+        <div class="col-md-4">
+          <input type="text" name="name" class="form-control" placeholder="Your Name" required />
+        </div>
+        <div class="col-md-6">
+          <input type="text" name="message" class="form-control" placeholder="Your Message" required />
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-warning w-100">Send</button>
+        </div>
+      </div>
+    </form>
+    <ul class="list-group bg-transparent" id="donorWall"></ul>
+  </div>
+</div>
+
+
+<!-- Firebase SDK -->
+<script type="module">
+  import {{ initializeApp }} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import {{ getDatabase, ref, push, onValue }} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+
+  const firebaseConfig = {{
+    apiKey: "AIzaSyAbupXFEClgx6RsMeEFvzUdkCuE4SQkqis",
+    authDomain: "dream-car-dc4bd.firebaseapp.com",
+    projectId: "dream-car-dc4bd",
+    storageBucket: "dream-car-dc4bd.firebasestorage.app",
+    messagingSenderId: "610744441635",
+    appId: "1:610744441635:web:7d2051f15239b21df78a96"
+  }};
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const commentsRef = ref(db, "comments");
+
+  // Submit handler
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("commentForm");
+    const wall = document.getElementById("donorWall");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const message = form.message.value.trim();
+      if (name && message) {{
+        push(commentsRef, {{ name, message }});
+        form.reset();
+      }}
+    });
+
+    // Listen for changes
+    onValue(commentsRef, snapshot => {{
+      wall.innerHTML = "";
+      const data = snapshot.val();
+      for (let key in data) {{
+        const item = data[key];
+        const li = document.createElement("li");
+        li.className = "list-group-item bg-dark text-light";
+        li.textContent = `"${{item.message}}" — ${{item.name}}`;
+        wall.prepend(li);
+      }}
+    }});
+  });
+</script>
+
 </body>
 </html>
