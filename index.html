@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ahmed’s Dream Porsche</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
   <style>
     body {
       background: url('https://www.transparenttextures.com/patterns/leather.png'), #1b1b1b;
@@ -23,42 +25,64 @@
     }
     .progress-bar {
       font-weight: bold;
+      transition: width 1s ease-in-out;
     }
     .carousel img {
       max-height: 600px;
       object-fit: cover;
       border-radius: 10px;
     }
-    .donate-box {
+    .donate-box, .card-glow {
       background-color: rgba(30, 30, 30, 0.9);
       padding: 2rem;
       border-radius: 10px;
-      margin-top: 2rem;
-      text-align: center;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
       box-shadow: 0 0 20px #ffc10799;
     }
-    .card-glow {
-      background-color: rgba(0, 0, 0, 0.6);
-      border: 1px solid #8b4513;
-      box-shadow: 0 0 20px #8b451355;
-      padding: 1rem;
-      border-radius: 10px;
-    }
     .donate-btn {
+      display: inline-block;
+      max-width: 100%;
+      text-align: center;
+      word-wrap: break-word;
+      white-space: normal;
+      line-height: 1.3;
+
       background-color: #ffdd00;
       color: #000;
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       padding: 0.8rem 2rem;
       border: none;
       border-radius: 8px;
       text-decoration: none;
+      box-shadow: 0 0 15px #ffdd0080;
     }
     .donate-btn:hover {
       background-color: #ffcc00;
-      color: #000;
     }
-  </style>
+    .share-btns a {
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+    }
+    .share-btns i {
+      margin-right: 5px;
+    }
+    .ratio iframe {
+      border-radius: 10px;
+    }
+  
+<style>
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animated-text {
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+</style>
+
+</style>
 </head>
 <body>
 
@@ -68,114 +92,86 @@
   <div class="container mt-4">
     <div class="progress">
       <div class="progress-bar bg-warning" style="width: 0%">0% — $0 / $400,000</div>
+<div class="container text-center mt-4">
+  <div class="card-glow p-4 animated-text">
+    <h2 class="mb-3 fw-bold">Life’s short. Drive fast.</h2>
+    <p class="lead mb-0">
+      You only live once — so why not go all in?<br />
+      Chasing a dream this big takes guts, a little madness, and full throttle.<br />
+      Every once in a while, the universe hands it to someone bold enough to ask.<br />
+      This is mine. Let’s make it real. Then I’ll chase the next one…<br />
+      <strong>in a brand new Porsche.</strong>
+    </p>
+  </div>
+</div>
+
+<div class="container text-center mt-4">
+  <div class="card-glow p-4">
+    <h2 class="mb-3 fw-bold">Life’s short. Drive fast.</h2>
+    <p class="lead mb-0">
+      You only live once — so why not go all in?<br />
+      Chasing a dream this big takes guts, a little madness, and full throttle.<br />
+      Every once in a while, the universe hands it to someone bold enough to ask.<br />
+      This is mine. Let’s make it real. Then I’ll chase the next one…<br />
+      <strong>in a brand new Porsche.</strong>
+    </p>
+  </div>
+</div>
+
     </div>
   </div>
 </div>
 
 <div class="container mt-5">
   <div class="card-glow mb-5">
-    <div id="porscheCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="porscheCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-ride="carousel">
       <div class="carousel-inner">
-
+        <!-- Replace with actual image <img> tags as needed -->
         <div class="carousel-item active">
-          <img src="1A07D3BE-EE18-4003-A80E-AE4DE155F9B8.jpeg" class="d-block w-100" alt="Porsche View 1">
+          <img src="https://files.porsche.com/filestore/image/multimedia/none/992-c2s-j1-2023-sideshot/thumbwhite/40c5bb67-92ae-11ed-80e8-005056bbdc38;sK;twebp/porsche-thumbwhite.webp" class="d-block w-100" alt="Porsche 1">
         </div>
-    
-        <div class="carousel-item ">
-          <img src="1707D678-B690-4B57-A5A1-A5551DDEB303.jpeg" class="d-block w-100" alt="Porsche View 2">
-        </div>
-    
-        <div class="carousel-item ">
-          <img src="5254B6B6-0A0F-40A4-9CD1-DC4AA4C5A027.jpeg" class="d-block w-100" alt="Porsche View 3">
-        </div>
-    
-        <div class="carousel-item ">
-          <img src="4C53C353-33E0-4EC6-AEF7-6ED7A7E22085.jpeg" class="d-block w-100" alt="Porsche View 4">
-        </div>
-    
-        <div class="carousel-item ">
-          <img src="446067ED-8D7E-4194-A4D2-F2DF5F24BE81.jpeg" class="d-block w-100" alt="Porsche View 5">
-        </div>
-    
-        <div class="carousel-item ">
-          <img src="0B628CFB-4811-481E-A91E-8B840DF5695C.jpeg" class="d-block w-100" alt="Porsche View 6">
-        </div>
-    
-        <div class="carousel-item ">
-          <img src="3D0B875B-E85D-4478-B33D-B9E45FD6A344.jpeg" class="d-block w-100" alt="Porsche View 7">
-        </div>
-    
-        <div class="carousel-item ">
-          <img src="DD70539C-826D-4F2F-B76D-16E69FE508D8.jpeg" class="d-block w-100" alt="Porsche View 8">
-        </div>
-    
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#porscheCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#porscheCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
     </div>
   </div>
+</div>
 
-  <div class="donate-box">
-    <h3 class="mb-3">☕ Support My Dream</h3>
-    <p>Skip your next coffee and help me drive my dream Porsche instead 😄</p>
-    <a href="https://coff.ee/crazycar" class="donate-btn" target="_blank">Donate Now on Buy Me a Coffee</a>
+<div class="donate-box text-center">
+  <h3 class="mb-3">☕ Support My Dream</h3>
+  <p>Skip your next coffee and help me drive my dream Porsche instead 😄</p>
+  <a href="https://coff.ee/crazycar" class="donate-btn" target="_blank">Donate Now on Buy Me a Coffee</a>
+</div>
+
+<div class="container text-center mb-5">
+  <div class="card-glow">
+    <h4 class="mb-3">📢 Share the Dream</h4>
+    <p>Help spread the word — every share brings the Porsche closer!</p>
+    <div class="share-btns">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://coff.ee/crazycar" target="_blank" class="btn btn-primary">
+        <i class="fab fa-facebook-f"></i> Facebook
+      </a>
+      <a href="https://twitter.com/intent/tweet?url=https://coff.ee/crazycar" target="_blank" class="btn btn-info">
+        <i class="fab fa-x-twitter"></i> X
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="btn btn-danger">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank" class="btn btn-dark">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+    </div>
+    <p class="text-muted mt-2"><em>(Instagram and TikTok don't support direct share — opens platform)</em></p>
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<div class="container mt-5">
-  <div class="card-glow p-4">
-    <h3 class="mb-4 text-center">🎥 Watch the Dream</h3>
-    <div class="ratio ratio-16x9">
-      <iframe src="https://www.youtube.com/embed/WoP9OuFbq4c?si=hXxKeMX9WRunMZ15" 
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
-
-
-<div class="container mt-5">
-  <div class="card-glow p-4">
-    <h3 class="mb-3 text-center">💬 Donor Wall</h3>
-    <p class="text-center mb-4">Leave a message, wish, or encouragement here!</p>
-    <ul class="list-group bg-transparent" id="donorWall">
-      <li class="list-group-item bg-dark text-light">"Hope you get it soon!" — Karim</li>
-      <li class="list-group-item bg-dark text-light">"Can't wait to see you driving it!" — Sarah</li>
-      <li class="list-group-item bg-dark text-light">"Vroom vroom 🚗💨" — Anonymous</li>
-    </ul>
-    <p class="text-center text-muted mt-3"><em>(Public wall only — actual submissions disabled for now)</em></p>
-  </div>
-</div>
-
-
-<div class="container mt-5 mb-4 text-center">
-  <div class="card-glow p-3">
-    <h4 class="mb-3">📢 Share the Dream</h4>
-    <p>Help me spread the word — every share brings the Porsche closer!</p>
-    <div class="d-flex justify-content-center gap-3 flex-wrap">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://coff.ee/crazycar" target="_blank" class="btn btn-primary">
-        Facebook
-      </a>
-      <a href="https://twitter.com/intent/tweet?url=https://coff.ee/crazycar&text=Support%20Ahmed's%20Porsche%20Dream!" target="_blank" class="btn btn-info">
-        X (Twitter)
-      </a>
-      <a href="https://www.instagram.com/" target="_blank" class="btn btn-danger">
-        Instagram
-      </a>
-      <a href="https://www.tiktok.com/" target="_blank" class="btn btn-dark">
-        TikTok
-      </a>
-    </div>
-    <p class="mt-2 text-muted"><em>(Instagram and TikTok don’t support direct share — opens platform)</em></p>
-  </div>
-</div>
+<script>
+  // Animate progress bar to show example value (can be made dynamic)
+  document.addEventListener("DOMContentLoaded", () => {
+    const bar = document.querySelector(".progress-bar");
+    bar.style.width = "10%";
+    bar.textContent = "10% — $40,000 / $400,000";
+  });
+</script>
 
 
 <div class="container mt-5">
@@ -224,26 +220,34 @@
 </div>
 
 
-<!-- Firebase SDK -->
-<script type="module">
-  import {{ initializeApp }} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-  import {{ getDatabase, ref, push, onValue }} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
-  const firebaseConfig = {{
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+</script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+
+  const firebaseConfig = {
     apiKey: "AIzaSyAbupXFEClgx6RsMeEFvzUdkCuE4SQkqis",
     authDomain: "dream-car-dc4bd.firebaseapp.com",
     projectId: "dream-car-dc4bd",
     storageBucket: "dream-car-dc4bd.firebasestorage.app",
     messagingSenderId: "610744441635",
     appId: "1:610744441635:web:7d2051f15239b21df78a96"
-  }};
+  };
 
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
   const commentsRef = ref(db, "comments");
 
-  // Submit handler
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("commentForm");
     const wall = document.getElementById("donorWall");
 
@@ -251,26 +255,94 @@
       e.preventDefault();
       const name = form.name.value.trim();
       const message = form.message.value.trim();
-      if (name && message) {{
-        push(commentsRef, {{ name, message }});
+      if (name && message) {
+        push(commentsRef, { name, message });
         form.reset();
-      }}
+      }
     });
 
-    // Listen for changes
-    onValue(commentsRef, snapshot => {{
+    onValue(commentsRef, snapshot => {
       wall.innerHTML = "";
       const data = snapshot.val();
-      for (let key in data) {{
+      for (let key in data) {
         const item = data[key];
         const li = document.createElement("li");
         li.className = "list-group-item bg-dark text-light";
-        li.textContent = `"${{item.message}}" — ${{item.name}}`;
+        li.textContent = `"${item.message}" — ${item.name}`;
         wall.prepend(li);
-      }}
-    }});
+      }
+    });
   });
 </script>
+
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+  import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAbupXFEClgx6RsMeEFvzUdkCuE4SQkqis",
+    authDomain: "dream-car-dc4bd.firebaseapp.com",
+    projectId: "dream-car-dc4bd",
+    storageBucket: "dream-car-dc4bd.firebasestorage.app",
+    messagingSenderId: "610744441635",
+    appId: "1:610744441635:web:7d2051f15239b21df78a96"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const commentsRef = ref(db, "comments");
+  const totalRef = ref(db, "donationTotal");
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("commentForm");
+    const wall = document.getElementById("donorWall");
+    const progress = document.querySelector(".progress-bar");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const message = form.message.value.trim();
+      if (name && message) {
+        push(commentsRef, { name, message });
+        form.reset();
+      }
+    });
+
+    onValue(commentsRef, snapshot => {
+      wall.innerHTML = "";
+      const data = snapshot.val();
+      for (let key in data) {
+        const item = data[key];
+        const li = document.createElement("li");
+        li.className = "list-group-item bg-dark text-light";
+        li.textContent = `"${item.message}" — ${item.name}`;
+        wall.prepend(li);
+      }
+    });
+
+    onValue(totalRef, snapshot => {
+      const amount = snapshot.val() || 0;
+      const goal = 400000;
+      const percent = Math.min(100, (amount / goal * 100)).toFixed(1);
+      progress.style.width = `${percent}%`;
+      progress.textContent = `${percent}% — $${amount.toLocaleString()} / $${goal.toLocaleString()}`;
+    });
+  });
+</script>
+
+
+<div class="container text-center mt-5">
+  <div class="card-glow p-4">
+    <h3 class="mb-4">🔥 Dare to Want More</h3>
+    <p class="lead mb-4">Not every dream is supposed to stay a dream.<br>
+    Some need to be chased, fast, loud, and unapologetically.<br>
+    This isn’t just a car — it’s the ignition switch for what’s next.</p>
+    <div class="ratio ratio-16x9">
+      <iframe src="https://www.youtube.com/embed/Xm7cZ4s8TtY" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
